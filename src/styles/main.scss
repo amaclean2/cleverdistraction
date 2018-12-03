@@ -1,0 +1,157 @@
+@import 'colors';
+
+.title-text {
+	display: inline-flex;
+	align-items: center;
+	width: 100vw;
+	max-width: 700px;
+	height: 100vh;
+
+	h1 {
+		font-family: times;
+		font-size: 8em;
+		font-weight: bolder;
+		word-wrap: break-word;
+		line-height: 0.69em;
+		max-width: 100%;
+		color: #44555F;
+
+		@media screen and (max-width: 400px) {
+			font-size: 7.5em;
+		}
+		@media screen and (max-width: 350px) {
+			font-size: 6.4em;
+		}
+	}
+}
+
+.button {
+	color: $white;
+	background-color: $themeBlue;
+	padding: 10px 20px;
+	font-size: 1em;
+	border-radius: 3px;
+	// text-transform: uppercase;
+	box-shaodw: 0 1px 3px $transparentGray;
+	transition: all 0.3s ease-in-out;
+	outline: none;
+	font-family: times;
+	font-weight: bolder;
+	border: none;
+
+	&:hover {
+		background-color: $darkThemeBlue;
+		box-shadow: 0 1px 5px $transparentGray;
+		cursor: pointer;
+	}
+}
+
+.menu-clickable {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 2em;
+	color: $themeBlue;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+
+	&:hover {
+		color: $darkThemeBlue;
+	}
+}
+
+.link-title {
+	font-weight: bolder;
+	font-size: 1.6em;
+}
+
+.nav-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $transparentGray;
+	width: 100vw;
+	height: 100vh;
+	transition: all 0.3s ease-in-out;
+	opacity: 1;
+	visibility: visible;
+	z-index:1;
+}
+
+.nav-drawer {
+	height: 100vh;
+	width: 300px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	background-color: $white;
+	box-shadow: -5px 0 15px $transparentGray;
+	transition: all 0.3s ease-in-out;
+	z-index: 2;
+
+	a {
+		display: block;
+		text-decoration: none;
+		color: $darkThemeBlue;
+		padding: 15px;
+		font-size: 1.3em;
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			background-color: $lightGray;
+		}
+
+		&.special-link {
+			color: $transparentGray;
+		}
+	}
+}
+
+.pages {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	max-height: 100vh;
+
+	h2 {
+		font-size: 4em;
+		margin: 0;
+		line-height: 0.7em;
+		font-family: times;
+		color: $darkThemeBlue;
+	}
+
+	.content-container {
+		overflow: auto;
+		flex: 1;
+		margin-top: 40px;
+
+		.content {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+	}
+
+	@media screen and (max-width: 830px) {
+		padding: 0px;
+	}
+}
+
+.head-spacing {
+	height: 30px;
+	width: 100%;
+	background-color: $gray;
+}
+
+.nav-container.hidden {
+	.nav-background {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.nav-drawer {
+		right: -500px;
+	}
+}
