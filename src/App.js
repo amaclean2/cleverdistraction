@@ -5,6 +5,7 @@ import Header from './components/main/header';
 import Home from './components/main/home';
 import Projects from './components/pages/projects';
 import Blogs from './components/pages/blogs';
+import Pictures from './components/pages/pictures';
 
 class App extends Component {
 
@@ -16,9 +17,9 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route path='/projects' component={Projects} />
           <Route path='/ideas' component={Header} />
-          <Route exact path='/blogs' component={Blogs} />
-          <Route path='/images' component={Header} />
-          <Route exact path='/about' component={Header} />
+          <Route path='/blogs' component={Blogs} />
+          <Route path='/images' component={Pictures} />
+          <Route path='/about' component={Header} />
         </div>
       </div> );
   }

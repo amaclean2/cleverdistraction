@@ -38,6 +38,13 @@
 	font-family: times;
 	font-weight: bolder;
 	border: none;
+	text-decoration: none;
+	display: inline-block;
+
+	@media screen and (max-width: 500px) {
+		display: block;
+		text-align: center;
+	}
 
 	&:hover {
 		background-color: $darkThemeBlue;
