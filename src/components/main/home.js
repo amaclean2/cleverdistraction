@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavDrawer from './nav';
+// import NavDrawer from './nav';
 
 class Home extends Component {
 	constructor() {

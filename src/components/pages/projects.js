@@ -10,7 +10,7 @@ class Projects extends Component {
         			<div className="content">
 	        			<div className="link-card">
 	        				<div className="link-content toolbox"></div>
-		        			<a className="link-desc" href="http://toolboxproject.io" target="_blank">
+		        			<a rel="noopener noreferrer" className="link-desc" href="http://toolboxproject.io" target="_blank">
 		        				<span className="link-title" >Toolbox -</span><br />
 		        				is a project to organize and visualize the production of machine shops.<br />
 		        				Bringing a UI focus to shop management could revolutionize the industry.
@@ -18,7 +18,7 @@ class Projects extends Component {
 	        			</div>
 	        			<div className="link-card">
 	        				<div className="link-content lesson-box"></div>
-		        			<a className="link-desc" href="http://amaclean2.github.io" target="_blank">
+		        			<a rel="noopener noreferrer" className="link-desc" href="http://amaclean2.github.io" target="_blank">
 		        				<span className="link-title" >The Lesson Box</span><br />
 		        				Lets make it as easy as possible to get started in programming.<br />
 		        				The Lesson Box is a set of daily lessons building coding skills in Python.
@@ -27,7 +27,7 @@ class Projects extends Component {
 	        			</div>
 	        			<div className="link-card">
 	        				<div className="link-content devfest"></div>
-		        			<a className="link-desc" href="http://devfestsf.com" target="_blank">
+		        			<a rel="noopener noreferrer" className="link-desc" href="http://devfestsf.com" target="_blank">
 		        				<span className="link-title" >Devfest -</span><br />
 		        				is a meet-up to educate young developers in technologies and opportunities in the programming world.
 		        			</a>

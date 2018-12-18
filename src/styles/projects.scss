@@ -4,14 +4,15 @@
 
 	.link-card {
 		position: relative;
-		border-radius: 3px;
+		border-radius: 10px;
 		display: inline-block;
 		transition: all 0.3s ease-in-out;
-		box-shadow: 0 1px 5px $transparentGray;
+		box-shadow: 0 5px 15px $transparentGray;
 		margin: 10px;
+		overflow: hidden;
 
 		&:hover {
-			box-shadow: 0 1px 15px $transparentGray;
+			box-shadow: 0 5px 25px $transparentGray;
 		}
 
 		.link-content {

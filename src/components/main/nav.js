@@ -12,7 +12,7 @@ class NavDrawer extends Component {
 	    		<NavLink to='/projects' onClick={this.props.toggle}>Projects</NavLink>
 	    		{/*<NavLink to='/ideas' onClick={this.props.toggle}>Ideas</NavLink>*/}
 	    		<NavLink to='/blogs' onClick={this.props.toggle}>Notes</NavLink>
-	    		<NavLink to='/images' onClick={this.props.toggle}>Exploring</NavLink>
+	    		<NavLink to='/pictures' onClick={this.props.toggle}>Exploring</NavLink>
 	    		<NavLink to='/about' onClick={this.props.toggle}>About Andrew</NavLink>
 	    	</div>
 	    </div>
