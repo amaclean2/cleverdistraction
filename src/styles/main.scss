@@ -114,6 +114,18 @@
 	}
 }
 
+.background-border {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: calc(100vw);
+	height: calc(100vh);
+	background-color: transparent;
+	border-right: 100px solid #FFF;
+	box-sizing: border-box;
+	z-index: -1;
+}
+
 .pages {
 	padding: 20px;
 	display: flex;

@@ -13,6 +13,7 @@ class App extends Component {
     return (
       <div id="Main/App"> 
         <Header />
+        <div className="background-border"></div>
         <div className="page-content">
           <Route exact path='/' component={Home} />
           <Route path='/projects' component={Projects} />
