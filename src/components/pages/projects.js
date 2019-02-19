@@ -1,42 +1,81 @@
 import React, { Component } from 'react';
 
-class Projects extends Component {
+const Card = (props) => {
+	return <a
+		target="_blank"
+		href={props.url}
+		style={{left: props.positions.left, top: props.positions.top}}
+		id={props.card}
+		onDrag={props.drag}
+		onMouseDown={props.click}
+		className={"display-card " + props.class}>{}</a>
+}
 
-  	render() {
-    	return (
-      		<div className="pages projects">
-        		<h2>Projects</h2>
-        		<div className="content-container">
-        			<div className="content">
-	        			<div className="link-card">
-	        				<div className="link-content toolbox"></div>
-		        			<a rel="noopener noreferrer" className="link-desc" href="http://toolboxproject.io" target="_blank">
-		        				<span className="link-title" >Toolbox -</span><br />
-		        				is a project to organize and visualize the production of machine shops.<br />
-		        				Bringing a UI focus to shop management could revolutionize the industry.
-		        			</a>
-	        			</div>
-	        			<div className="link-card">
-	        				<div className="link-content lesson-box"></div>
-		        			<a rel="noopener noreferrer" className="link-desc" href="http://amaclean2.github.io" target="_blank">
-		        				<span className="link-title" >The Lesson Box</span><br />
-		        				Lets make it as easy as possible to get started in programming.<br />
-		        				The Lesson Box is a set of daily lessons building coding skills in Python.
-		        				(I gotta keep up)
-		        			</a>
-	        			</div>
-	        			<div className="link-card">
-	        				<div className="link-content devfest"></div>
-		        			<a rel="noopener noreferrer" className="link-desc" href="http://devfestsf.com" target="_blank">
-		        				<span className="link-title" >Devfest -</span><br />
-		        				is a meet-up to educate young developers in technologies and opportunities in the programming world.
-		        			</a>
-	        			</div>
-	        		</div>
-        		</div>
-      		</div>
-    	);
-  	}
+class Projects extends Component {
+	constructor() {
+		super()
+		this.state = {
+			cards: [
+				{top: 100, left: 300},
+				{top: 200, left: 100},
+				{top: 600, left: 100}
+			],
+			inits: [0, 0],
+			urls: [
+				'https://www.toolboxproject.io',
+				'https://amaclean2.github.io',
+				'https://devfestsf.com'
+			]
+		}
+	}
+
+	clickCards = e => {
+		// let card = this.state.cards[e.target.id],
+			
+		// console.log(e.clientX, e.clientY);
+	}
+
+	dragCards = e => {
+
+		let cards = this.state.cards,
+			card = e.target.id;
+
+		if (e.clientX !== 0 && e.clientY !== 0) {
+			let truePosX = e.clientX,
+				truePosY = e.clientY;
+
+			cards[card].left = truePosX;
+			cards[card].top = truePosY;
+		}
+
+		this.setState({ cards });
+	}
+
+	render() {
+	    return (<div className="Projects">
+	    	<Card
+	    		positions={this.state.cards[0]}
+	    		card={0}
+	    		drag={this.dragCards}
+	    		click={this.clickCards}
+	    		url={this.state.urls[0]}
+	    		class={'toolbox'} />
+	    	<Card
+	    		positions={this.state.cards[1]}
+	    		card={1}
+	    		drag={this.dragCards}
+	    		click={this.clickCards}
+	    		url={this.state.urls[1]}
+	    		class={'lessonbox'} />
+	    	<Card
+	    		positions={this.state.cards[2]}
+	    		card={2}
+	    		drag={this.dragCards}
+	    		click={this.clickCards}
+	    		url={this.state.urls[2]}
+	    		class={'devfest'} />
+	    </div>);
+	}
 }
 
 export default Projects;

@@ -1,0 +1,67 @@
+.card {
+	min-width: 100px;
+	min-height: 100px;
+	background-color: #FFF;
+	border-radius: 3px;
+	display: inline-block;
+	padding: 10px;
+	box-shadow: 0 15px 20px -8px rgba(0,0,0,0.3);
+
+	input[type=text] {
+		width: 500px;
+		padding: 10px;
+		font-size: 15px;
+		outline: none;
+		border-radius: 3px;
+		border: 1px solid #CCC;
+	}
+}
+
+.Home {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.display-card {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	overflow: hidden;
+	display: inline-block;
+	position: fixed;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		z-index: 1;
+	}
+}
+
+.toolbox {
+	background-image: url('./Images/Toolbox.png');
+	top: 10vh;
+	left: 10vw;
+	width: 785px;
+	height: 480px;
+	box-shadow: 0 20px 15px -8px rgba(0,0,0,0.3);
+}
+
+.lessonbox {
+	background-image: url('./Images/LessonBox.png');
+	top: 60vh;
+	left: 50vw;
+	width: 500px;
+	height: 300px;
+	box-shadow: 0 15px 25px -3px rgba(0,0,0,0.3);
+}
+
+.devfest {
+	background-image: url('./Images/Devfest.png');
+	top: 55vh;
+	left: 12vh;
+	width: 400px;
+	height: 260px;
+	box-shadow: 10px 20px 35px -3px rgba(0,0,0,0.3);
+}
