@@ -2,47 +2,36 @@ import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 
 import Controls from './Controls';
+import Board from './Board';
+import { store } from './GameStore';
 
 class Game extends Component {
 	constructor() {
 		super()
 		this.state = {
-			boardSize: {
-				width: 1000,
-				height: 1000
-			},
 			activeDrags: 0,
-			deltaPosition: {
-				x: 0,
-				y: 0
-			},
 			controlledPosition: {
 				x: -400,
 				y: 200
 			},
 			draw: {
 				line: false,
-				rectange: false
-			}
+				rectange: false,
+				features: false,
+				emitter: false
+			},
+			playing: true
 		}
 	}
 
 	onStart = () => {
-		this.setState({ activeDrags: ++this.state.activeDrags });
 	}
 
 	onStop = () => {
-		this.setState({ activeDrags: --this.state.activeDrags });
 	}
 
-	handleDrag = (e, ui) => {
-		const {x, y} = this.state.deltaPosition;
-		this.setState({
-			deltaPosition: {
-				x: x + ui.deltaX,
-				y: y + ui.deltaY
-			}
-		});
+	reset = () => {
+		store.particleMap = [];
 	}
 
 	moveBoard = e => {
@@ -62,39 +51,35 @@ class Game extends Component {
 		this.setState({ boardPosition });
 	}
 
-	toggleLine = () => {
+	toggleDrawFeatures = size => {
 		let draw = this.state.draw;
 		for ( let key in draw ) draw[key] = false;
-		draw.line = !this.state.draw.line;
+			draw.features = size;
 		this.setState({ draw });
 	}
 
-	toggleRectange = () => {
+	toggleEmitter = type => {
 		let draw = this.state.draw;
 		for ( let key in draw ) draw[key] = false;
-		draw.rectange = !this.state.draw.rectange;
+			draw.emitter = type;
 		this.setState({ draw });
+	}
+
+	pause = () => {
+		this.setState({ playing: !this.state.playing });
 	}
 
 	drawBoard() {
 		const handlers = {onStart: this.onStart, onStop: this.onStop};
 		return <Draggable onDrag={this.handleDrag} {...handlers}>
-            <div className="board"
-            style={{
-            	width: this.state.boardSize.width,
-            	height: this.state.boardSize.height,
-            }}>
+            <div className="board-container"
+	            style={{
+	            	width: store.bounds.right,
+	            	height: store.bounds.bottom,
+	            }}>
+	            <Board drawFunctions={this.state.draw} playing={this.state.playing} />
             </div>
-            </Draggable>
-		return <div
-			className="board"
-			onDrag={this.moveBoard}
-			style={{
-				width: this.state.boardSize.width,
-				height: this.state.boardSize.height
-			}}>
-
-		</div>
+        </Draggable>
 	}
 
 	render() {
@@ -102,8 +87,10 @@ class Game extends Component {
 	    return (<div className="Game">
 	    	{board}
 	    	<Controls 
-	    		toggleRectange={this.toggleRectange}
-	    		toggleLine={this.toggleLine} />
+	    		toggleEmitter={this.toggleEmitter}
+	    		toggleDrawFeatures={this.toggleDrawFeatures}
+	    		reset={this.reset}
+	    		pause={this.pause}/>
 	    </div>);
 	}
 }

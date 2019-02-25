@@ -10,10 +10,10 @@ export default class HomePage extends Component {
 			title: props.title,
 			pages: [
 				{ path: 'home', title: 'Home'},
-				{ path: 'projects', title: 'Projects'},
-				{ path: 'notes', title: 'Notes'},
-				{ path: 'exploring', title: 'Exploring'},
-				{ path: 'about', title: 'About'}
+				// { path: 'projects', title: 'Projects'},
+				// { path: 'notes', title: 'Notes'},
+				// { path: 'exploring', title: 'Exploring'},
+				// { path: 'about', title: 'About'}
 			]
 		}
 	}
