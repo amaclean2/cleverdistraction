@@ -3,6 +3,9 @@
 	height: 500px;
 	background-color: #FFF;
 	position: relative;
+	border-radius: 3px;
+	box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+	overflow: hidden;
 
 	.full-screen-button {
 		width: 50px;

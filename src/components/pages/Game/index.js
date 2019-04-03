@@ -38,10 +38,7 @@ class Game extends Component {
 		let boardPosition = this.state.boardPosition,
 			screen = this.screenParams.current,
 			screenX = screen.getBoundingClientRect().x,
-			screenY = screen.getBoundingClientRect().y,
-			boardX = e.target.getBoundingClientRect().x,
-			boardY = e.target.getBoundingClientRect().y;
-
+			screenY = screen.getBoundingClientRect().y;
 
 		if (e.clientX !== 0 || e.clientY !== 0) {
 			boardPosition.x = e.clientX - screenX;

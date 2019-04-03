@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { store } from './GameStore';
+// import { store } from './GameStore';
 
 class Particle extends Component {
 	constructor(props) {

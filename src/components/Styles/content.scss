@@ -20,8 +20,33 @@
 .Home {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-around;
 	height: 100%;
+	flex-direction: column;
+	flex-wrap: wrap;
+
+	.button-box {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		a {
+			display: inline-block;
+			text-decoration: none;
+			padding: 10px 20px;
+			background-color: #00202B;
+			margin: 5px;
+			border-radius: 3px;
+			transition: all 0.15s ease-in-out;
+			color: #FFF;
+			font-weight: bolder;
+
+			&:hover {
+				margin-bottom: 15px;
+				box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+			}
+		}
+	}
 }
 
 .display-card {

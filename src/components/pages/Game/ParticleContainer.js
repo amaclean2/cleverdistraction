@@ -46,10 +46,13 @@ class ParticleContainer extends Component {
 		});
 
 		if( !valid ) {
+
+			const directionMap = [ -1 * store.particleSpacing, store.particleSpacing ];
+
 			store.particleMap.push({
 				id: id,
-				x: x,
-				y: y,
+				x: x + directionMap[Math.floor(Math.random() * 2)],
+				y: y + directionMap[Math.floor(Math.random() * 2)],
 				lives: store.lifeSpan,
 				type: this.props.draw
 			});
@@ -65,7 +68,7 @@ class ParticleContainer extends Component {
 	handleParticles = () => {
 		if(this.props.playing) {
 
-			const directionMap = [ -1 * store.particleSpacing, store.particleSpacing ];
+			// const directionMap = [ -1 * store.particleSpacing, store.particleSpacing ];
 
 			let deletedParticles = [],
 				newParticles = [];
@@ -73,8 +76,8 @@ class ParticleContainer extends Component {
 			store.particleMap = store.particleMap.map( part => {
 				let returnObj = {
 					...part,
-					x : part.x + directionMap[Math.floor(Math.random() * 2)],
-					y : part.y + directionMap[Math.floor(Math.random() * 2)],
+					// x : part.x + directionMap[Math.floor(Math.random() * 2)],
+					// y : part.y + directionMap[Math.floor(Math.random() * 2)],
 					lives: part.lives - 1
 				};
 
@@ -118,7 +121,8 @@ class ParticleContainer extends Component {
 	drownParticle = particle => {
 		particle = {...particle, lives: particle.lives - store.swimTime};
 
-		this.newParticle(particle.x, particle.y);
+		Array(store.rebirthRate).fill('_').forEach( _ => this.newParticle(particle.x, particle.y));
+		// this.newParticle(particle.x, particle.y);
 		return particle;
 	}
 

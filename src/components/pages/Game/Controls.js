@@ -17,7 +17,7 @@ class Controls extends Component {
 	    	<div className="menu-button" >
 	    		<div className="menu-icon">Emitter</div>
 	    		<ul>
-	    			<li onClick={() => this.props.toggleEmitter('herbivore')}>Emit Herbivores</li>
+	    			<li onClick={() => this.props.toggleEmitter('herbivore')}>Emit Plants</li>
 	    			{/*<li onClick={() => this.props.toggleDrawFeatures('carnivore')}>Emit Carnivores</li>*/}
 	    		</ul>
 	    	</div>

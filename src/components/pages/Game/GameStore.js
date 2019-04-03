@@ -5,11 +5,12 @@ export const store = {
 	mediumWater: 20,
 	largeWater: 50,
 	swimTime: 30,
-	lifeSpan: 40,
-	particleSpacing: 2,
-	speciesSize: 1000,
+	lifeSpan: 50,
+	particleSpacing: 5,
+	speciesSize: 5000,
 	timeRate: 100,
-	thin: 2,
+	rebirthRate: 2,
+	thin: 2, // don't change to below 2
 
 	bounds: {
 		top: 0,
