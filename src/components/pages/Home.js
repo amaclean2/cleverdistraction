@@ -35,7 +35,7 @@ class Home extends Component {
 	    return (<div className="Home">
 			{board}
 			<div className="button-box">
-				<a target="_blank" href="https://clever-distraction-blog.firebaseapp.com/">Something I Said</a>
+				<a target="_blank" href="https://blog.cleverdistraction.com">Something I Said</a>
 				<a target="_blank" href="https://code.cleverdistraction.com">Something I Did</a>
 			</div>
 	    </div>);
